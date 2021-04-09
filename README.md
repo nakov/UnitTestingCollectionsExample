@@ -4,7 +4,7 @@ Unit testing example with **C#** and **NUnit**.
 
 ## Class for Testing
 
-We are given a **C# class `Collection<T>`**, implementing a generic collection, holding an indexed sequence of elements:
+We are given a **C# class [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs)**, implementing a generic collection, holding an indexed sequence of elements:
 
 ```cs
 public class Collection<T>
@@ -25,7 +25,7 @@ public class Collection<T>
 
 ## Unit Tests for the Collection<T> Class
 
-Write unit tests to test the functionality of the `Collection<T>` class, with high code coverage.
+Write unit tests to test the functionality of the [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs) class, with high code coverage.
 
 _Hint_: You may implement the following tests:
 
