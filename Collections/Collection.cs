@@ -44,6 +44,20 @@ namespace Collections
             }
         }
 
+        public T this[int index]
+        {
+            get
+            {
+                this.CheckRange(index, nameof(index), minValue: 0, maxValue: this.Count-1);
+                return this.items[index];
+            }
+            set
+            {
+                this.CheckRange(index, nameof(index), minValue: 0, maxValue: this.Count-1);
+                this.items[index] = value;
+            }
+        }
+
         public void InsertAt(int index, T item)
         {
             this.CheckRange(index, nameof(index), minValue: 0, maxValue: this.Count);

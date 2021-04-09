@@ -14,7 +14,15 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_Constructor()
+        public void Test_Collections_ConstructorSingleItem()
+        {
+            var nums = new Collection<int>(5);
+            Assert.That(nums.ToString(), Is.EqualTo("[5]"));
+            Assert.That(nums.Capacity, Is.GreaterThanOrEqualTo(nums.Count));
+        }
+
+        [Test]
+        public void Test_Collections_ConstructorMultipleItems()
         {
             var nums = new Collection<int>(10, 20, 30);
             Assert.That(nums.ToString(), Is.EqualTo("[10, 20, 30]"));
@@ -58,6 +66,51 @@ namespace Collections.Tests
             names.AddRange("Steve", "Kate", "Jordan");
             Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria, Steve, Kate, Jordan]"));
             Assert.That(names.Capacity, Is.GreaterThanOrEqualTo(names.Count));
+        }
+
+        [Test]
+        public void Test_Collections_GetByIndex()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            var item0 = names[0];
+            Assert.That(item0, Is.EqualTo("Peter"));
+            var item1 = names[1];
+            Assert.That(item1, Is.EqualTo("Maria"));
+        }
+
+        [Test]
+        public void Test_Collections_GetByInvalidIndex()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            Assert.That(() => { var name = names[-1]; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { var name = names[2]; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { var name = names[500]; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria]"));
+        }
+
+        [Test]
+        public void Test_Collections_SetByIndex()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            names[0] = "Steve";
+            names[1] = "Mike";
+            Assert.That(names.ToString(), Is.EqualTo("[Steve, Mike]"));
+        }
+
+        [Test]
+        public void Test_Collections_SetByInvalidIndex()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            Assert.That(() => { names[-1] = "new item"; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { names[-2] = "new item"; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => { names[500] = "new item"; },
+                Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria]"));
         }
 
         [Test]
@@ -122,8 +175,9 @@ namespace Collections.Tests
         public void Test_Collections_InsertAtInvalidIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
-            Assert.That(() => names.InsertAt(-1, "Steve"), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.InsertAt(-1, "Jane"), Throws.InstanceOf<ArgumentOutOfRangeException>());
             Assert.That(() => names.InsertAt(3, "Steve"), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.InsertAt(500, "Nia"), Throws.InstanceOf<ArgumentOutOfRangeException>());
             Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria]"));
         }
 
@@ -141,6 +195,18 @@ namespace Collections.Tests
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             names.Exchange(0, 3);
             Assert.That(names.ToString(), Is.EqualTo("[Mia, Maria, Steve, Peter]"));
+        }
+
+        [Test]
+        public void Test_Collections_ExchangeInvalidIndexes()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            Assert.That(() => names.Exchange(-1, 1), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.Exchange(1, -1), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.Exchange(2, 1), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.Exchange(1, 2), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.Exchange(-500, 500), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria]"));
         }
 
         [Test]
@@ -168,6 +234,16 @@ namespace Collections.Tests
             var removed = names.RemoveAt(1);
             Assert.That(removed, Is.EqualTo("Maria"));
             Assert.That(names.ToString(), Is.EqualTo("[Peter, Steve, Mia]"));
+        }
+
+        [Test]
+        public void Test_Collections_RemoveAtInvalidIndex()
+        {
+            var names = new Collection<string>("Peter", "Maria");
+            Assert.That(() => names.RemoveAt(-1), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.RemoveAt(2), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(() => names.RemoveAt(500), Throws.InstanceOf<ArgumentOutOfRangeException>());
+            Assert.That(names.ToString(), Is.EqualTo("[Peter, Maria]"));
         }
 
         [Test]
@@ -211,6 +287,37 @@ namespace Collections.Tests
                 Assert.That(nums.Count, Is.EqualTo(i-1));
                 Assert.That(nums.Capacity, Is.GreaterThanOrEqualTo(nums.Count));
             }
+        }
+
+        [Test]
+        public void Test_Collections_ToStringEmpty()
+        {
+            var names = new Collection<string>();
+            Assert.That(names.ToString(), Is.EqualTo("[]"));
+        }
+
+        [Test]
+        public void Test_Collections_ToStringSingle()
+        {
+            var names = new Collection<string>("Nakov");
+            Assert.That(names.ToString(), Is.EqualTo("[Nakov]"));
+        }
+
+        [Test]
+        public void Test_Collections_ToStringMultiple()
+        {
+            var objects = new Collection<object>("Steve", "Maria", 20);
+            Assert.That(objects.ToString(), Is.EqualTo("[Steve, Maria, 20]"));
+        }
+
+        [Test]
+        public void Test_Collections_ToStringCollectionOfCollections()
+        {
+            var names = new Collection<string>("Teddy", "Gerry");
+            var nums = new Collection<int>(10, 20);
+            var dates = new Collection<DateTime>();
+            var nested = new Collection<object>(names, nums, dates);
+            Assert.That(nested.ToString(), Is.EqualTo("[[Teddy, Gerry], [10, 20], []]"));
         }
 
         [Test]
