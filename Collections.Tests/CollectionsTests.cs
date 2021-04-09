@@ -7,14 +7,14 @@ namespace Collections.Tests
     public class CollectionsTests
     {
         [Test]
-        public void Test_Collections_EmptyConstructor()
+        public void Test_Collection_EmptyConstructor()
         {
             var nums = new Collection<int>();
             Assert.That(nums.ToString(), Is.EqualTo("[]"));
         }
 
         [Test]
-        public void Test_Collections_ConstructorSingleItem()
+        public void Test_Collection_ConstructorSingleItem()
         {
             var nums = new Collection<int>(5);
             Assert.That(nums.ToString(), Is.EqualTo("[5]"));
@@ -22,7 +22,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_ConstructorMultipleItems()
+        public void Test_Collection_ConstructorMultipleItems()
         {
             var nums = new Collection<int>(10, 20, 30);
             Assert.That(nums.ToString(), Is.EqualTo("[10, 20, 30]"));
@@ -30,7 +30,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_Add()
+        public void Test_Collection_Add()
         {
             var nums = new Collection<int>(10, 20, 30);
             nums.Add(40);
@@ -39,7 +39,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_AddWithGrow()
+        public void Test_Collection_AddWithGrow()
         {
             // Arrange
             var nums = new Collection<int>(10, 20, 30);
@@ -60,7 +60,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_AddRange()
+        public void Test_Collection_AddRange()
         {
             var names = new Collection<string>("Peter", "Maria");
             names.AddRange("Steve", "Kate", "Jordan");
@@ -69,7 +69,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_GetByIndex()
+        public void Test_Collection_GetByIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             var item0 = names[0];
@@ -79,7 +79,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_GetByInvalidIndex()
+        public void Test_Collection_GetByInvalidIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             Assert.That(() => { var name = names[-1]; },
@@ -92,7 +92,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_SetByIndex()
+        public void Test_Collection_SetByIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             names[0] = "Steve";
@@ -101,7 +101,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_SetByInvalidIndex()
+        public void Test_Collection_SetByInvalidIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             Assert.That(() => { names[-1] = "new item"; },
@@ -114,7 +114,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_AddRangeWithGrow()
+        public void Test_Collection_AddRangeWithGrow()
         {
             var nums = new Collection<int>(1, 2);
             int oldCapacity = nums.Capacity;
@@ -129,7 +129,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_InsertAtStart()
+        public void Test_Collection_InsertAtStart()
         {
             var names = new Collection<string>("Peter", "Maria");
             names.InsertAt(0, "Steve");
@@ -138,7 +138,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_InsertAtEnd()
+        public void Test_Collection_InsertAtEnd()
         {
             var names = new Collection<string>("Peter", "Maria");
             names.InsertAt(2, "Steve");
@@ -147,7 +147,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_InsertAtMiddle()
+        public void Test_Collection_InsertAtMiddle()
         {
             var names = new Collection<string>("Peter", "Maria");
             names.InsertAt(1, "Steve");
@@ -156,7 +156,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_InsertAtWithGrow()
+        public void Test_Collection_InsertAtWithGrow()
         {
             var names = new Collection<string>("Peter", "Maria");
             int oldCapacity = names.Capacity;
@@ -172,7 +172,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_InsertAtInvalidIndex()
+        public void Test_Collection_InsertAtInvalidIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             Assert.That(() => names.InsertAt(-1, "Jane"), Throws.InstanceOf<ArgumentOutOfRangeException>());
@@ -182,7 +182,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_ExchangeMiddle()
+        public void Test_Collection_ExchangeMiddle()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             names.Exchange(1, 2);
@@ -190,7 +190,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_ExchangeFirstLast()
+        public void Test_Collection_ExchangeFirstLast()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             names.Exchange(0, 3);
@@ -198,7 +198,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_ExchangeInvalidIndexes()
+        public void Test_Collection_ExchangeInvalidIndexes()
         {
             var names = new Collection<string>("Peter", "Maria");
             Assert.That(() => names.Exchange(-1, 1), Throws.InstanceOf<ArgumentOutOfRangeException>());
@@ -210,7 +210,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_RemoveAtStart()
+        public void Test_Collection_RemoveAtStart()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             var removed = names.RemoveAt(0);
@@ -219,7 +219,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_RemoveAtEnd()
+        public void Test_Collection_RemoveAtEnd()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             var removed = names.RemoveAt(3);
@@ -228,7 +228,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_RemoveAtMiddle()
+        public void Test_Collection_RemoveAtMiddle()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             var removed = names.RemoveAt(1);
@@ -237,7 +237,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_RemoveAtInvalidIndex()
+        public void Test_Collection_RemoveAtInvalidIndex()
         {
             var names = new Collection<string>("Peter", "Maria");
             Assert.That(() => names.RemoveAt(-1), Throws.InstanceOf<ArgumentOutOfRangeException>());
@@ -247,7 +247,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_RemoveAll()
+        public void Test_Collection_RemoveAll()
         {
             var nums = new Collection<int>();
             const int itemsCount = 1000;
@@ -262,7 +262,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_Clear()
+        public void Test_Collection_Clear()
         {
             var names = new Collection<string>("Peter", "Maria", "Steve", "Mia");
             names.Clear();
@@ -271,7 +271,7 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_CountAndCapacity()
+        public void Test_Collection_CountAndCapacity()
         {
             var nums = new Collection<int>();
             const int itemsCount = 1000;
@@ -290,28 +290,28 @@ namespace Collections.Tests
         }
 
         [Test]
-        public void Test_Collections_ToStringEmpty()
+        public void Test_Collection_ToStringEmpty()
         {
             var names = new Collection<string>();
             Assert.That(names.ToString(), Is.EqualTo("[]"));
         }
 
         [Test]
-        public void Test_Collections_ToStringSingle()
+        public void Test_Collection_ToStringSingle()
         {
             var names = new Collection<string>("Nakov");
             Assert.That(names.ToString(), Is.EqualTo("[Nakov]"));
         }
 
         [Test]
-        public void Test_Collections_ToStringMultiple()
+        public void Test_Collection_ToStringMultiple()
         {
             var objects = new Collection<object>("Steve", "Maria", 20);
             Assert.That(objects.ToString(), Is.EqualTo("[Steve, Maria, 20]"));
         }
 
         [Test]
-        public void Test_Collections_ToStringCollectionOfCollections()
+        public void Test_Collection_ToStringCollectionOfCollections()
         {
             var names = new Collection<string>("Teddy", "Gerry");
             var nums = new Collection<int>(10, 20);
@@ -322,7 +322,7 @@ namespace Collections.Tests
 
         [Test]
         [Timeout(1000)]
-        public void Test_Collections_1MillionItems()
+        public void Test_Collection_1MillionItems()
         {
             const int itemsCount = 1000000;
             var nums = new Collection<int>();
