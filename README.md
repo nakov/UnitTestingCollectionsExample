@@ -32,37 +32,37 @@ _Hint_: You may implement the following tests:
 ```cs
 public class CollectionsTests
 {
-  public void Test_Collections_EmptyConstructor() { … }
-  public void Test_Collections_ConstructorSingleItem() { … }
-  public void Test_Collections_ConstructorMultipleItems() { … }
-  public void Test_Collections_Add() { … }
-  public void Test_Collections_AddWithGrow() { … }
-  public void Test_Collections_AddRange() { … }
-  public void Test_Collections_GetByIndex() { … }
-  public void Test_Collections_GetByInvalidIndex() { … }
-  public void Test_Collections_SetByIndex() { … }
-  public void Test_Collections_SetByInvalidIndex() { … }
-  public void Test_Collections_AddRangeWithGrow() { … }
-  public void Test_Collections_InsertAtStart() { … }
-  public void Test_Collections_InsertAtEnd() { … }
-  public void Test_Collections_InsertAtMiddle() { … }
-  public void Test_Collections_InsertAtWithGrow() { … }
-  public void Test_Collections_InsertAtInvalidIndex() { … }
-  public void Test_Collections_ExchangeMiddle() { … }
-  public void Test_Collections_ExchangeFirstLast() { … }
-  public void Test_Collections_ExchangeInvalidIndexes() { … }
-  public void Test_Collections_RemoveAtStart() { … }
-  public void Test_Collections_RemoveAtEnd() { … }
-  public void Test_Collections_RemoveAtMiddle() { … }
-  public void Test_Collections_RemoveAtInvalidIndex() { … }
-  public void Test_Collections_RemoveAll() { … }
-  public void Test_Collections_Clear() { … }
-  public void Test_Collections_CountAndCapacity() { … }
-  public void Test_Collections_ToStringEmpty() { … }
-  public void Test_Collections_ToStringSingle() { … }
-  public void Test_Collections_ToStringMultiple() { … }
-  public void Test_Collections_ToStringCollectionOfCollections() { … }
-  public void Test_Collections_1MillionItems() { … }
+  public void Test_Collection_EmptyConstructor() { … }
+  public void Test_Collection_ConstructorSingleItem() { … }
+  public void Test_Collection_ConstructorMultipleItems() { … }
+  public void Test_Collection_Add() { … }
+  public void Test_Collection_AddWithGrow() { … }
+  public void Test_Collection_AddRange() { … }
+  public void Test_Collection_GetByIndex() { … }
+  public void Test_Collection_GetByInvalidIndex() { … }
+  public void Test_Collection_SetByIndex() { … }
+  public void Test_Collection_SetByInvalidIndex() { … }
+  public void Test_Collection_AddRangeWithGrow() { … }
+  public void Test_Collection_InsertAtStart() { … }
+  public void Test_Collection_InsertAtEnd() { … }
+  public void Test_Collection_InsertAtMiddle() { … }
+  public void Test_Collection_InsertAtWithGrow() { … }
+  public void Test_Collection_InsertAtInvalidIndex() { … }
+  public void Test_Collection_ExchangeMiddle() { … }
+  public void Test_Collection_ExchangeFirstLast() { … }
+  public void Test_Collection_ExchangeInvalidIndexes() { … }
+  public void Test_Collection_RemoveAtStart() { … }
+  public void Test_Collection_RemoveAtEnd() { … }
+  public void Test_Collection_RemoveAtMiddle() { … }
+  public void Test_Collection_RemoveAtInvalidIndex() { … }
+  public void Test_Collection_RemoveAll() { … }
+  public void Test_Collection_Clear() { … }
+  public void Test_Collection_CountAndCapacity() { … }
+  public void Test_Collection_ToStringEmpty() { … }
+  public void Test_Collection_ToStringSingle() { … }
+  public void Test_Collection_ToStringMultiple() { … }
+  public void Test_Collection_ToStringCollectionOfCollections() { … }
+  public void Test_Collection_1MillionItems() { … }
 }
 ```
 
