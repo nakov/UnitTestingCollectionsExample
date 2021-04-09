@@ -65,3 +65,13 @@ public class CollectionsTests
   public void Test_Collections_1MillionItems() { … }
 }
 ```
+
+## Expected Results
+
+Sample output from the **unit tests**:
+
+![image](https://user-images.githubusercontent.com/1689586/114179602-e0500380-9947-11eb-8cb2-737823fe5f62.png)
+
+Sample output from the **code coverage**:
+
+![image](https://user-images.githubusercontent.com/1689586/114179830-2a38e980-9948-11eb-8e4d-a21069de0088.png)
