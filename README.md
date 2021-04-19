@@ -1,8 +1,8 @@
-# Unit Testing - Example
+# Unit Testing Example: Collection<T>
 
 Unit testing example with **C#** and **NUnit**.
 
-## Class for Testing
+## Class for Testing: Collection<T>
 
 We are given a **C# class [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs)**, implementing a generic collection, holding an indexed sequence of elements:
 
