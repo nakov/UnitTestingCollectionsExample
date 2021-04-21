@@ -103,20 +103,20 @@ _Hint_: You may implement the following tests:
 ```cs
 class CircularQueueTests
 {
-    public void Test_CircularQueue_ConstructorDefault()
-    public void Test_CircularQueue_ConstructorWithCapacity()
-    public void Test_CircularQueue_Enqueue()
-    public void Test_CircularQueue_EnqueueWithGrow()
-    public void Test_CircularQueue_Dequeue()
-    public void Test_CircularQueue_DequeueEmpty()
-    public void Test_CircularQueue_EnqueueDequeue_WithRangeCross()
-    public void Test_CircularQueue_Peek()
-    public void Test_CircularQueue_PeekEmpty()
-    public void Test_CircularQueue_ToArray()
-    public void Test_CircularQueue_ToArray_WithRangeCross()
-    public void Test_CircularQueue_ToString()
-    public void Test_CircularQueue_MultipleOperations()
-    public void Test_CircularQueue_1MillionItems()
+    public void Test_CircularQueue_ConstructorDefault() { … }
+    public void Test_CircularQueue_ConstructorWithCapacity() { … }
+    public void Test_CircularQueue_Enqueue() { … }
+    public void Test_CircularQueue_EnqueueWithGrow() { … }
+    public void Test_CircularQueue_Dequeue() { … }
+    public void Test_CircularQueue_DequeueEmpty() { … }
+    public void Test_CircularQueue_EnqueueDequeue_WithRangeCross() { … }
+    public void Test_CircularQueue_Peek() { … }
+    public void Test_CircularQueue_PeekEmpty() { … }
+    public void Test_CircularQueue_ToArray() { … }
+    public void Test_CircularQueue_ToArray_WithRangeCross() { … }
+    public void Test_CircularQueue_ToString() { … }
+    public void Test_CircularQueue_MultipleOperations() { … }
+    public void Test_CircularQueue_1MillionItems() { … }
 }
 ```
 
