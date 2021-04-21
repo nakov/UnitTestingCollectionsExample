@@ -2,7 +2,7 @@
 
 Unit testing examples with **C#** and **NUnit**.
 
-## Class for Testing: Collection<T>
+## Class for Testing: Collection\<T>
 
 We are given a **C# class [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs)**, implementing a generic collection, holding an indexed sequence of elements:
 
@@ -23,7 +23,7 @@ public class Collection<T>
 }
 ```
 
-## Unit Tests for the Collection<T> Class
+## Unit Tests for the Collection\<T> Class
 
 Write **unit tests** to test the functionality of the [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs) class, with high code coverage.
 
@@ -77,7 +77,7 @@ Sample output from the **code coverage**:
 ![image](https://user-images.githubusercontent.com/1689586/114179830-2a38e980-9948-11eb-8e4d-a21069de0088.png)
 
 
-## Class for Testing: CircularQueue<T>
+## Class for Testing: CircularQueue\<T>
 
 We are given a **C# class [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs)**, implementing the "**queue**" data structure, using a **circular buffer**:
 
@@ -94,7 +94,7 @@ public class CircularQueue<T>
 }
 ```
 
-## Unit Tests for the CircularQueue<T> Class
+## Unit Tests for the CircularQueue\<T> Class
 
 Write **unit tests** to test the functionality of the [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs) class, with high code coverage.
 
