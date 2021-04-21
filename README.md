@@ -1,6 +1,6 @@
-# Unit Testing Example: Collection<T>
+# Unit Testing Example: Collection<T>, CircularQueue<T>
 
-Unit testing example with **C#** and **NUnit**.
+Unit testing examples with **C#** and **NUnit**.
 
 ## Class for Testing: Collection<T>
 
@@ -25,12 +25,12 @@ public class Collection<T>
 
 ## Unit Tests for the Collection<T> Class
 
-Write unit tests to test the functionality of the [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs) class, with high code coverage.
+Write **unit tests** to test the functionality of the [`Collection<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/Collection.cs) class, with high code coverage.
 
 _Hint_: You may implement the following tests:
 
 ```cs
-public class CollectionsTests
+public class CollectionTests
 {
   public void Test_Collection_EmptyConstructor() { … }
   public void Test_Collection_ConstructorSingleItem() { … }
@@ -75,3 +75,54 @@ Sample output from the **unit tests**:
 Sample output from the **code coverage**:
 
 ![image](https://user-images.githubusercontent.com/1689586/114179830-2a38e980-9948-11eb-8e4d-a21069de0088.png)
+
+
+## Class for Testing: CircularQueue<T>
+
+We are given a **C# class [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs)**, implementing the **queue** data structure, using a **circular buffer**:
+
+```cs
+public class CircularQueue<T>
+{
+    public CircularQueue(int capacity) { … }
+    public int Count { … }
+    public void Enqueue(T element) { … }
+    public T Dequeue() { … }
+    public T Peek() { … }
+    public T[] ToArray() { … }
+    public override string ToString() { … }
+}
+```
+
+## Unit Tests for the CircularQueue<T> Class
+
+Write **unit tests** to test the functionality of the [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs) class, with high code coverage.
+
+_Hint_: You may implement the following tests:
+
+```cs
+class CircularQueueTests
+{
+	public void Test_CircularQueue_ConstructorDefault()
+	public void Test_CircularQueue_ConstructorWithCapacity()
+	public void Test_CircularQueue_Enqueue()
+	public void Test_CircularQueue_EnqueueWithGrow()
+	public void Test_CircularQueue_Dequeue()
+	public void Test_CircularQueue_DequeueEmpty()
+	public void Test_CircularQueue_EnqueueDequeue_WithRangeCross()
+	public void Test_CircularQueue_Peek()
+	public void Test_CircularQueue_PeekEmpty()
+	public void Test_CircularQueue_ToArray()
+	public void Test_CircularQueue_ToArray_WithRangeCross()
+	public void Test_CircularQueue_ToString()
+	public void Test_CircularQueue_MultipleOperations()
+	public void Test_CircularQueue_1MillionItems()
+}
+```
+
+## Expected Results
+
+Sample output from the **unit tests**:
+
+![image](https://user-images.githubusercontent.com/1689586/115532136-30ab5780-a29e-11eb-88ab-338cdcfd9a22.png)
+
