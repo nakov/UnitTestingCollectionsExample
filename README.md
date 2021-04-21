@@ -79,7 +79,7 @@ Sample output from the **code coverage**:
 
 ## Class for Testing: CircularQueue<T>
 
-We are given a **C# class [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs)**, implementing the **queue** data structure, using a **circular buffer**:
+We are given a **C# class [`CircularQueue<T>`](https://github.com/nakov/UnitTestingExample/blob/main/Collections/CircularQueue.cs)**, implementing the "**queue**" data structure, using a **circular buffer**:
 
 ```cs
 public class CircularQueue<T>
